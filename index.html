@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finza Web Services | Best Digital Solutions & Web Development Services</title>
+    <meta name="description" content="Finza Web Services offers premium web development, app development, SEO, and digital marketing solutions. Transform your business with our expert digital services.">
+    <meta name="keywords" content="web development, app development, digital marketing, SEO services, graphic design, Finza Web Services, digital solutions">
+    <meta name="author" content="Finza Web Services">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Finza Web Services | Premium Digital Solutions">
+    <meta property="og:description" content="Transform your business with our expert web development, app development, SEO, and digital marketing solutions.">
+    <meta property="og:image" content="your-logo-image-url.jpg">
+    <meta property="og:url" content="your-website-url">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Finza Web Services | Digital Solutions">
+    <meta name="twitter:description" content="Expert web development, app development, SEO, and digital marketing solutions for your business.">
+    <link rel="canonical" href="your-website-url">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #C9A96E;
+            --primary-dark: #B89446;
+            --secondary: #1A1A1A;
+            --accent: #D4BFA8;
+            --light: #F5F3F0;
+            --dark: #0A0A0A;
+            --gray: #8A8A8A;
+            --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 300;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 0;
+            transition: var(--transition);
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 22px;
+            box-shadow: 0 8px 20px rgba(201, 169, 110, 0.3);
+            transition: var(--transition);
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 400;
+            font-size: 15px;
+            letter-spacing: 1px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--dark);
+            border: none;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            letter-spacing: 1px;
+            font-size: 14px;
+            box-shadow: 0 8px 20px rgba(201, 169, 110, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.7s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(201, 169, 110, 0.4);
+        }
+
+        /* Luxury Hero Section */
+        .luxury-hero {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            margin-top: 100px;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .hero-slides {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(10,10,10,0.8) 0%, rgba(10,10,10,0.5) 100%);
+        }
+
+        .slide-1 { background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); }
+        .slide-2 { background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); }
+        .slide-3 { background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); }
+
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(201, 169, 110, 0.3);
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--light) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(201, 169, 110, 0.1);
+        }
+
+        /* Luxury Services */
+        .luxury-section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-size: 16px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: rgba(26, 26, 26, 0.6);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(201, 169, 110, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--dark);
+            font-size: 32px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotateY(180deg) scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        /* Luxury Process */
+        .luxury-process {
+            background: rgba(26, 26, 26, 0.4);
+            position: relative;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+            z-index: 1;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--dark);
+            box-shadow: 0 10px 25px rgba(201, 169, 110, 0.3);
+            transition: var(--transition);
+        }
+
+        .step:hover .step-number {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .step h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .step p {
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        /* Luxury Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .portfolio-item {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            height: 400px;
+            transition: var(--transition);
+        }
+
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(10,10,10,0.9) 100%);
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-content {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-content h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .portfolio-content p {
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        /* Luxury Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 25px;
+            border-radius: 15px;
+            background: rgba(26, 26, 26, 0.6);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-item:hover {
+            border-color: rgba(201, 169, 110, 0.2);
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-icon {
+            background: var(--primary);
+            color: var(--dark);
+            transform: rotate(10deg);
+        }
+
+        .contact-form {
+            background: rgba(26, 26, 26, 0.6);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--light);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            font-size: 16px;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.2);
+        }
+
+        /* Luxury Footer */
+        footer {
+            background: #0A0A0A;
+            padding: 80px 0 30px;
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 15px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .social-icon:hover {
+            background: var(--primary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
+            50% { transform: scale(1.1); box-shadow: 0 12px 30px rgba(37, 211, 102, 0.7); }
+            100% { transform: scale(1); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        /* Luxury Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .services-grid, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919685315564?text=Hello%20Shubham%20Enterprises,%20I%20would%20like%20to%20get%20a%20quote%20for%20your%20services." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Schema.org markup for business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Finza Web Services",
+      "description": "Premium digital solutions including web development, app development, SEO, and digital marketing services",
+      "image": "your-logo-url",
+      "url": "your-website-url",
+      "telephone": "+919685315564",
+      "email": "shubhamenterpises227@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Business Avenue",
+        "addressLocality": "Premium District",
+        "postalCode": "12345",
+        "addressCountry": "IN"
+      },
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "priceRange": "₹₹₹",
+      "sameAs": [
+        "your-facebook-url",
+        "your-twitter-url",
+        "your-linkedin-url",
+        "your-instagram-url"
+      ]
+    }
+    </script>
+    
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <div class="logo-icon">S</div>
+                    <div class="logo-text">Finza Web Services</div>
+                </div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#process">Process</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <a href="https://wa.me/919685315564?text=Hello%20Shubham%20Enterprises,%20I%20would%20like%20to%20get%20a%20quote%20for%20your%20services." class="cta-button" target="_blank">Get Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Hero Section -->
+    <main>
+    <section class="luxury-hero" id="home" aria-label="Homepage Banner">
+        <div class="hero-background">
+            <div class="hero-slides" role="banner">
+                <div class="hero-slide slide-1 active" aria-label="Slide 1"></div>
+                <div class="hero-slide slide-2" aria-label="Slide 2"></div>
+                <div class="hero-slide slide-3" aria-label="Slide 3"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content animate-fadeInUp">
+                <div class="hero-badge">PREMIUM DIGITAL SOLUTIONS</div>
+                <h1 class="hero-title">Crafting Digital Excellence</h1>
+                <p class="hero-subtitle">We transform visionary ideas into exceptional digital experiences through bespoke web development, mobile applications, and strategic digital marketing solutions.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="cta-button">Our Services</a>
+                    <a href="https://wa.me/919685315564?text=Hello%20Shubham%20Enterprises,%20I%20would%20like%20to%20get%20a%20quote%20for%20your%20services." class="cta-button btn-secondary" target="_blank">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Services -->
+    <section class="luxury-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">OUR SERVICES</div>
+                <h2 class="section-title">Exquisite Digital Solutions</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Website Development</h3>
+                    <p>We create responsive, high-performance websites tailored to your business needs with cutting-edge technologies and elegant design.</p>
+                    <a href="https://wa.me/919685315564?text=Hello%20Shubham%20Enterprises,%20I%20am%20interested%20in%20Website%20Development%20services." class="cta-button" target="_blank">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>App Development</h3>
+                    <p>Native and cross-platform mobile applications for iOS and Android with stunning UI/UX and seamless performance.</p>
+                    <a href="https://wa.me/919685315564?text=Hello%20Shubham%20Enterprises,%20I%20am%20interested%20in%20App%20Development%20services." class="cta-button" target="_blank">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO & Digital Marketing</h3>
+                    <p>Boost your online visibility and drive targeted traffic with our proven SEO strategies and data-driven marketing campaigns.</p>
+                    <a href="https://wa.me/919685315564?text=Hello%20Shubham%20Enterprises,%20I%20am%20interested%20in%20SEO%20and%20Digital%20Marketing%20services." class="cta-button" target="_blank">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Creative and professional branding solutions that make your business stand out with sophisticated visual identity.</p>
+                    <a href="https://wa.me/919685315564?text=Hello%20Shubham%20Enterprises,%20I%20am%20interested%20in%20Graphic%20Design%20services." class="cta-button" target="_blank">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-Commerce Solutions</h3>
+                    <p>Build your online store with secure payment gateways, intuitive user experience, and powerful inventory management.</p>
+                    <a href="https://wa.me/919685315564?text=Hello%20Shubham%20Enterprises,%20I%20am%20interested%20in%20E-Commerce%20Solutions." class="cta-button" target="_blank">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Hosting & Maintenance</h3>
+                    <p>Reliable hosting solutions and ongoing maintenance to keep your digital assets running smoothly and securely.</p>
+                    <a href="https://wa.me/919685315564?text=Hello%20Shubham%20Enterprises,%20I%20am%20interested%20in%20Hosting%20and%20Maintenance%20services." class="cta-button" target="_blank">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Process -->
+    <section class="luxury-section luxury-process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">OUR PROCESS</div>
+                <h2 class="section-title">Crafting Digital Excellence</h2>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Discover & Plan</h4>
+                    <p>Understanding your vision and business goals to create a strategic roadmap.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Design & Prototype</h4>
+                    <p>Creating wireframes and visual designs that reflect your brand identity.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Develop & Build</h4>
+                    <p>Coding with latest technologies and best practices for optimal performance.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Test & Refine</h4>
+                    <p>Rigorous testing across devices and platforms to ensure flawless delivery.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h4>Launch & Deploy</h4>
+                    <p>Going live with smooth deployment and comprehensive documentation.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h4>Support & Maintain</h4>
+                    <p>Ongoing support and regular updates for long-term success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Portfolio -->
+    <section class="luxury-section" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">OUR PORTFOLIO</div>
+                <h2 class="section-title">Crafting Digital Masterpieces</h2>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" itemscope itemtype="http://schema.org/CreativeWork">
+                    <img class="portfolio-img" src="https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="E-Commerce Platform Development by Finza Web Services" 
+                         loading="lazy" 
+                         width="800" 
+                         height="600">
+                    <div class="portfolio-content">
+                        <h4 itemprop="name">E-Commerce Platform</h4>
+                        <p itemprop="description">Complete online store with payment integration and inventory management.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="portfolio-content">
+                        <h4>Fitness Tracking App</h4>
+                        <p>Mobile application for workout tracking and nutrition planning.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="portfolio-content">
+                        <h4>Business Dashboard</h4>
+                        <p>Custom web portal for business analytics and management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Contact -->
+    <section class="luxury-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">CONTACT US</div>
+                <h2 class="section-title">Let's Create Something Extraordinary</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>office no 5 tansen rode gwalior M P 474001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>+91 96853 15564</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>shubhamenterpises227@gmail.com </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" rows="5" placeholder="Tell us about your project" required></textarea>
+                        </div>
+                        <button type="button" id="sendMessage" class="cta-button" style="width: 100%;">Send Message via WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Finza Web Services</h3>
+                    <p>Your premier digital solution partner for exceptional web development, mobile apps, SEO, and digital marketing services.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">App Development</a></li>
+                        <li><a href="#">SEO Services</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Business Avenue, City</li>
+                        <li><i class="fas fa-phone"></i> +91 96853 15564</li>
+                        <li><i class="fas fa-envelope"></i> shubhamenterpises227@gmail.com </li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Finza Web Services. All Rights Reserved. | Crafting Digital Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Hero slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Change slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // WhatsApp message sending from contact form
+        document.getElementById('sendMessage').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            if(!name || !email || !phone || !message) {
+                alert('Please fill all fields before sending message.');
+                return;
+            }
+
+            const whatsappMessage = `Hello Finza Web Services,%0A%0AHere are my details:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0A%0AMessage: ${message}%0A%0APlease get back to me with more information.`;
+            
+            const whatsappURL = `https://wa.me/919685315564?text=${whatsappMessage}`;
+            
+            window.open(whatsappURL, '_blank');
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .step, .portfolio-item, .contact-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
